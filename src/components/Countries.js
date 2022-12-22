@@ -25,12 +25,12 @@ export default function Countries() {
             </h1>
           ) : (
             <section className="container mx-auto p-10">
-                <div>
-                    <form>
-                        <input type="text" name="search" id="search" placeholder="Search for a country by its name" required/>
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8">
+                    <form autoComplete="off" className="max-w-4xl md:flex-1">
+                        <input type="text" name="search" id="search" placeholder="Search for a country by its name" required className="py-3 px-4 text-gray-600 placeholder-gray-600 w-full shadow rounded outline-none"/>
                     </form>
                     <form>
-                        <select name="filter-by-region" id="filter-by-region">
+                        <select name="filter-by-region" id="filter-by-region" className="w-52 py-3 px-4 outline-none shadow rounded text-gray-600 dark:text-gray-400 dark:bg-gray-800 dark:focus:bg-gray-700">
 
                         </select>
                     </form>
