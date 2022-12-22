@@ -1,16 +1,15 @@
-import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Countries from "./components/Countries";
+
+
 function App() {
   return (
-    <div className="header">
-      <Switch>
-        <Route path='/details'>
-          <Details />
-        </Route>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Countries />}></Route>
+        <Route path="/:name" element={<SingleCountry />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
