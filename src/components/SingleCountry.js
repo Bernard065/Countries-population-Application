@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function SingleCountry() {
     const [country, setCountry] = useState([]);
@@ -34,13 +34,16 @@ export default function SingleCountry() {
                   <h1 className="mb-8 font-bold text-gray-900 dark:text-white text-4xl lg:text-6xl">
                     {item.name.official}
                   </h1>
-                  <ul>
+                  <ul className='my-4 flex flex-col items-start justify-start gap-2 text-slate-700 dark:text-gray-400'>
                     <li>Capital City: {item.capital[0]}</li>
                     <li>Pouplation: {item.population.toLocaleString()}</li>
                     <li>Region: {item.region}</li>
                     <li>Subregion: {item.subregion}</li>
                   </ul>
-     
+
+                  <Link to="/">Back</Link>
+
+                
                 </article>
               </div>
             ))}
