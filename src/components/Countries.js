@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Article from "./Article";
 
 export default function Countries() {
     const [countries, setCountries] = useState([])
@@ -25,7 +26,7 @@ export default function Countries() {
           ) : (
             <section>
                 {countries.map((country) => (
-
+                    <Article key={country.name.common} {...country} />
                 ))}
             </section> 
           )}
