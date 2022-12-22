@@ -25,9 +25,12 @@ export default function Countries() {
             </h1>
           ) : (
             <section>
-                {countries.map((country) => (
-                    <Article key={country.name.common} {...country} />
-                ))}
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {countries.map((country) => (
+                        <Article key={country.name.common} {...country} />
+                    ))}
+                </div>
+               
             </section> 
           )}
         </>
