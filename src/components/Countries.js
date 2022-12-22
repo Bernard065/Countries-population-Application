@@ -16,5 +16,18 @@ export default function Countries() {
 
         getCountries()
     }, [])
-    return <>{countries.length}</>;
-}
+    return (
+        <>
+          {!countries ? (
+            <h1 className="text-gray-900 font-bold uppercase tracking-wide flex items-center justify-center text-center h-screen text-4xl dark:text-white">
+              Loading...
+            </h1>
+          ) : (
+            <section>
+                
+            </section> 
+          )}
+        </>
+      );
+    }
+    
