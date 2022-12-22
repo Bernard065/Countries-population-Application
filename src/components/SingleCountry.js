@@ -11,6 +11,7 @@ export default function SingleCountry() {
               const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
               const data = await res.json();
               setCountry(data);
+              
             } catch (error) {
               console.error(error);
             }
