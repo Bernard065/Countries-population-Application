@@ -34,8 +34,13 @@ export default function SingleCountry() {
                   <h1 className="mb-8 font-bold text-gray-900 dark:text-white text-4xl lg:text-6xl">
                     {item.name.official}
                   </h1>
-    
-                  
+                  <ul>
+                    <li>Capital City: {item.capital[0]}</li>
+                    <li>Pouplation: {item.population.toLocaleString()}</li>
+                    <li>Region: {item.region}</li>
+                    <li>Subregion: {item.subregion}</li>
+                  </ul>
+     
                 </article>
               </div>
             ))}
