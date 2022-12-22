@@ -11,7 +11,6 @@ export default function SingleCountry() {
               const res = await fetch(`https://restcountries.com/v3.1/name/${name}`);
               const data = await res.json();
               setCountry(data);
-              
             } catch (error) {
               console.error(error);
             }
@@ -20,7 +19,28 @@ export default function SingleCountry() {
         getSingleCountry();
 
     }, [name])
-  return (
-    <div>{name}</div>
-  )
-}
+    return (
+        <>
+          <section className="p-8 md:py-0 max-w-7xl mx-auto">
+            {country.map((item) => (
+              <div
+                key={item.population}
+                className="grid grid-cols-1 gap-8 md:grid-cols-2 md:place-items-center md:h-screen">
+                <article>
+                  <img src={item.flags.svg} alt={item.name.common} />
+                </article>
+    
+                <article>
+                  <h1 className="mb-8 font-bold text-gray-900 dark:text-white text-4xl lg:text-6xl">
+                    {item.name.official}
+                  </h1>
+    
+                  
+                </article>
+              </div>
+            ))}
+          </section>
+        </>
+      );
+    }
+    
