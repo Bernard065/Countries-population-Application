@@ -51,6 +51,11 @@ export default function Countries() {
                     </form>
                     <form>
                         <select name="filter-by-region" id="filter-by-region" className="w-52 py-3 px-4 outline-none shadow rounded text-gray-600 dark:text-gray-400 dark:bg-gray-800 dark:focus:bg-gray-700">
+                        {regions.map((region, index) => (
+                            <option key={index} value={region.name}>
+                                {region.name}
+                            </option>
+                        ))}
 
                         </select>
                     </form>
