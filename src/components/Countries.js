@@ -24,7 +24,9 @@ export default function Countries() {
             </h1>
           ) : (
             <section>
-                
+                {countries.map((country) => (
+
+                ))}
             </section> 
           )}
         </>
