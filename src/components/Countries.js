@@ -3,6 +3,26 @@ import Article from "./Article";
 
 export default function Countries() {
     const [countries, setCountries] = useState([])
+    const regions = [
+        {
+          name: "Europe",
+        },
+        {
+          name: "Asia",
+        },
+        {
+          name: "Africa",
+        },
+        {
+          name: "Oceania",
+        },
+        {
+          name: "Americas",
+        },
+        {
+          name: "Antarctic",
+        },
+      ];
 
     useEffect(() => {
         const getCountries = async() => {
