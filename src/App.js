@@ -1,9 +1,15 @@
-import './App.css';
-
+import { Switch, Route } from 'react-router-dom'
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
+    <div className="header">
+      <Switch>
+        <Route path='/details'>
+          <Details />
+        </Route>
+        <Route path='/'>
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }
