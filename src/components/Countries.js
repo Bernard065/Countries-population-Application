@@ -58,6 +58,11 @@ export default function Countries() {
         searchCountry();
     }
 
+    function handleFilterByRegion(e) {
+        e.preventDefault();
+        filterByRegion();
+    }
+
     return (
         <>
           {!countries ? (
@@ -74,7 +79,10 @@ export default function Countries() {
                         className="py-3 px-4 text-gray-600 placeholder-gray-600 w-full shadow rounded outline-none"/>
                     </form>
                     <form onSubmit={handleFilterByRegion}>
-                        <select name="filter-by-region" id="filter-by-region" className="w-52 py-3 px-4 outline-none shadow rounded text-gray-600 dark:text-gray-400 dark:bg-gray-800 dark:focus:bg-gray-700">
+                        <select name="filter-by-region" id="filter-by-region" className="w-52 py-3 px-4 outline-none shadow rounded text-gray-600 dark:text-gray-400 dark:bg-gray-800 dark:focus:bg-gray-700"
+                        value={regions.name}
+                        onChange={(e) => filterByRegion(e.target.value)}>
+
                         {regions.map((region, index) => (
                             <option key={index} value={region.name}>
                                 {region.name}
