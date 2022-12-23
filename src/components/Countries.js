@@ -51,6 +51,18 @@ export default function Countries() {
         }
       }
 
+    async function filterByRegion(region) {
+        try {
+          const res = await fetch(
+            `https://restcountries.com/v3.1/region/${region}`
+          );
+          const data = await res.json();
+          setCountries(data);
+        } catch (error) {
+          console.error(error);
+        }
+    }
+
     
 
     function handleSearchCountry(e) {
