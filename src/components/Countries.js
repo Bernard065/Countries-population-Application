@@ -39,6 +39,18 @@ export default function Countries() {
         getCountries()
     }, [])
 
+    async function searchCountry() {
+        try {
+          const res = await fetch(
+            `https://restcountries.com/v3.1/name/${searchText}`
+          );
+          const data = await res.json();
+          setCountries(data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
     
 
     function handleSearchCountry(e) {
