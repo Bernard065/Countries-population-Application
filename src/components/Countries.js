@@ -51,7 +51,7 @@ export default function Countries() {
         }
       }
 
-    async function filterByRegion(region) {
+    async function filterByRegion() {
         try {
           const res = await fetch(
             `https://restcountries.com/v3.1/region/${region}`
