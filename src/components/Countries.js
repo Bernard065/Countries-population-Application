@@ -44,6 +44,7 @@ export default function Countries() {
           const res = await fetch(
             `https://restcountries.com/v3.1/name/${searchText}`
           );
+          if(!res.ok) throw new Error('No country found')
           const data = await res.json();
           setCountries(data);
         } catch (error) {
@@ -89,6 +90,7 @@ export default function Countries() {
                         value={searchText}
                         onChange={(e) => setSearchText(e.target.value)} 
                         className="py-3 px-4 text-gray-600 placeholder-gray-600 w-full shadow rounded outline-none"/>
+                        
                     </form>
                     <form onSubmit={handleFilterByRegion}>
                         <select name="filter-by-region" id="filter-by-region" className="w-52 py-3 px-4 outline-none shadow rounded text-gray-600 dark:text-gray-400 dark:bg-gray-800 dark:focus:bg-gray-700"
