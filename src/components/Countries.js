@@ -63,8 +63,7 @@ export default function Countries() {
           console.error(error);
         }
     }
-
-    
+ 
 
     function handleSearchCountry(e) {
         e.preventDefault();
@@ -75,6 +74,7 @@ export default function Countries() {
         e.preventDefault();
         filterByRegion();
     }
+
 
     return (
         <>
@@ -105,6 +105,9 @@ export default function Countries() {
 
                         </select>
                     </form>
+                </div>
+                <div>
+                  
                 </div>
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                     {countries.map((country) => (

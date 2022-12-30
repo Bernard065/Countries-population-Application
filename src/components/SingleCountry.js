@@ -42,8 +42,6 @@ export default function SingleCountry() {
                   </ul>
 
                   <Link to="/" className='inline-block mt-8 bg-white py-2 px-6 rounded shadow text-gray-700 hover:bg-gray-200 transition-all duration-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-400'>&larr; Back</Link>
-
-                
                 </article>
               </div>
             ))}
