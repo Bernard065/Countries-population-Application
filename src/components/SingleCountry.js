@@ -19,6 +19,8 @@ export default function SingleCountry() {
         getSingleCountry();
 
     }, [name])
+
+
     return (
         <>
           <section className="p-8 md:py-0 max-w-7xl mx-auto">
@@ -31,21 +33,25 @@ export default function SingleCountry() {
                 </article>
     
                 <article>
-                  <h1 className="mb-8 font-bold text-gray-900 dark:text-white text-4xl lg:text-6xl">
+                  <h1 className="mb-8 font-bold text-gray-900 text-4xl lg:text-6xl">
                     {item.name.official}
                   </h1>
-                  <ul className='my-4 flex flex-col items-start justify-start gap-2 text-slate-700 dark:text-gray-400'>
+                  <ul className='my-4 flex flex-col items-start justify-start gap-2 text-slate-700'>
                     <li>Capital City: {item.capital[0]}</li>
-                    <li>Pouplation: {item.population.toLocaleString()}</li>
+                    <li>Population: {item.population.toLocaleString()}</li>
                     <li>Region: {item.region}</li>
                     <li>Subregion: {item.subregion}</li>
+                    <li>Area: {item.area.toLocaleString()}</li>
                   </ul>
+              
+                  
 
-                  <Link to="/" className='inline-block mt-8 bg-white py-2 px-6 rounded shadow text-gray-700 hover:bg-gray-200 transition-all duration-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-400'>&larr; Back</Link>
+                  <Link to="/" className='inline-block mt-8 bg-white py-2 px-6 rounded shadow text-gray-700 hover:bg-gray-200 transition-all duration-200'>&larr; Back</Link>
                 </article>
               </div>
             ))}
           </section>
+          
         </>
       );
     }

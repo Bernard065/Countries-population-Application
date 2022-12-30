@@ -63,7 +63,8 @@ export default function Countries() {
           console.error(error);
         }
     }
- 
+    
+    
 
     function handleSearchCountry(e) {
         e.preventDefault();
@@ -79,7 +80,7 @@ export default function Countries() {
     return (
         <>
           {!countries ? (
-            <h1 className="text-gray-900 font-bold uppercase tracking-wide flex items-center justify-center text-center h-screen text-4xl dark:text-white">
+            <h1 className="text-gray-900 font-bold uppercase tracking-wide flex items-center justify-center text-center h-screen text-4xl">
               Loading...
             </h1>
           ) : (
@@ -93,7 +94,7 @@ export default function Countries() {
                         
                     </form>
                     <form onSubmit={handleFilterByRegion}>
-                        <select name="filter-by-region" id="filter-by-region" className="w-52 py-3 px-4 outline-none shadow rounded text-gray-600 dark:text-gray-400 dark:bg-gray-800 dark:focus:bg-gray-700"
+                        <select name="filter-by-region" id="filter-by-region" className="w-52 py-3 px-4 outline-none shadow rounded text-gray-600"
                         value={regions.name}
                         onChange={(e) => filterByRegion(e.target.value)}>
 
@@ -112,8 +113,11 @@ export default function Countries() {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                     {countries.map((country) => (
                         <Article key={country.name.common} {...country} />
+                        
                     ))}
                 </div>
+               
+                
                
             </section> 
           )}
