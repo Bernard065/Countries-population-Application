@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-function Article({flags, name, population, region, subregion, capital, area}) {
+function Article({flags, name, population, region, subregion, capital, area, removeCountry}) {
   return (
     <>
         <Link to={`/${name.common}`}>
@@ -16,9 +16,11 @@ function Article({flags, name, population, region, subregion, capital, area}) {
                         <li>Capital: {capital}</li>
                         <li>Area: {area.toLocaleString()}</li> 
                     </ul>
+                    <button onClick={removeCountry} className='mt-4 px-4 py-2 rounded bg-gray-500 text-white hover:bg-gray-700'>Remove</button>
                 </div>
             </article>
         </Link>
+        
     </>
   );
 }
